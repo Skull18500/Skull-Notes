@@ -1,0 +1,12 @@
+C:/CodeDev/Note_app/vcpkg_installed/vcpkg/pkgs/imgui_x64-windows/lib/imgui.lib
+C:/CodeDev/Note_app/vcpkg_installed/vcpkg/pkgs/imgui_x64-windows/include/imgui.h
+C:/CodeDev/Note_app/vcpkg_installed/vcpkg/pkgs/imgui_x64-windows/include/imconfig.h
+C:/CodeDev/Note_app/vcpkg_installed/vcpkg/pkgs/imgui_x64-windows/include/imgui_internal.h
+C:/CodeDev/Note_app/vcpkg_installed/vcpkg/pkgs/imgui_x64-windows/include/imstb_textedit.h
+C:/CodeDev/Note_app/vcpkg_installed/vcpkg/pkgs/imgui_x64-windows/include/imstb_rectpack.h
+C:/CodeDev/Note_app/vcpkg_installed/vcpkg/pkgs/imgui_x64-windows/include/imstb_truetype.h
+C:/CodeDev/Note_app/vcpkg_installed/vcpkg/pkgs/imgui_x64-windows/include/imgui_stdlib.h
+C:/CodeDev/Note_app/vcpkg_installed/vcpkg/pkgs/imgui_x64-windows/include/imgui_impl_sdl3.h
+C:/CodeDev/Note_app/vcpkg_installed/vcpkg/pkgs/imgui_x64-windows/share/imgui/imgui-config.cmake
+C:/CodeDev/Note_app/vcpkg_installed/vcpkg/pkgs/imgui_x64-windows/share/imgui/imgui-targets.cmake
+C:/CodeDev/Note_app/vcpkg_installed/vcpkg/pkgs/imgui_x64-windows/share/imgui/imgui-targets-release.cmake

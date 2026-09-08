@@ -3,6 +3,12 @@
   "version-string": "0.1.0",
   "dependencies": [
     "sdl3",
-    "imgui"
-  ]
+    {
+      "name": "imgui",
+      "features": [
+        "sdl3-binding"
+      ]
+    }
+  ],
+  "builtin-baseline": "41c63ffe465ffa91d73af556b2757a5e78bee5ae"
 }

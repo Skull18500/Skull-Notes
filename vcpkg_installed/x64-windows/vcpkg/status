@@ -1,0 +1,40 @@
+Package: vcpkg-cmake-config
+Version: 2024-05-23
+Architecture: x64-windows
+Multi-Arch: same
+Abi: da4f5f6cf80bc7fd3ce2ae42172d54390117ae92f85235d07077b88c22a99933
+Status: install ok installed
+
+Package: vcpkg-cmake
+Version: 2024-04-23
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 539ba1b9048730ed9655c47f762b4cd3c7a8f93e80f00db3c514d26c63483aec
+Status: install ok installed
+
+Package: sdl3
+Version: 3.2.26
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 600af5d524ff623e20ec873ce74d8ba8b8b0ec0a9af4e771540f27dffc87b287
+Description: Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D.
+Status: install ok installed
+
+Package: imgui
+Version: 1.91.9
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: e0480a691cf5d101e1bd7853c83af23a1fd371ab239006f518c9d396bb1d59ca
+Description: Bloat-free Immediate Mode Graphical User interface for C++ with minimal dependencies.
+Status: install ok installed
+
+Package: imgui
+Feature: sdl3-binding
+Depends: sdl3
+Architecture: x64-windows
+Multi-Arch: same
+Description: Make available SDL3 binding
+Status: install ok installed
+

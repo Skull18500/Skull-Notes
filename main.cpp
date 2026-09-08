@@ -4,15 +4,15 @@
 
 
 void loop() {
-	bool shouldQuit = false;
-	while (shouldQuit == false) {
+	while (Renderer::Get().is_running()) {
 		/*
-		Poll events, render, and check for quit event
+		Build note-taking UI here between event processing and rendering.
 		Check for file changes, periodically save(if changed)
 		Trigger async tasks.
 		*/
+		Renderer::Get().process_events();
+		Renderer::Get().render();
 	}
-
 }
 
 int main() {
@@ -21,10 +21,10 @@ int main() {
 		printlog("Failed to initialize renderer");
 		return -1;
 	}
-	//create the begin event
-	EventSystem::Get().createEvent("begin");
-	//create the quit event
-	EventSystem::Get().createEvent("quit");
+
+	loop();
+	Renderer::Get().quit();
+	printlog("Application closed");
 
 	return 0;
 }
