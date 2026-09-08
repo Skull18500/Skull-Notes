@@ -1,10 +1,10 @@
 #pragma once
+#include "includes/imgui_impl_sdlrenderer3.h"
 #include "Systems/log.h"
 #include <cstdint>
 #include <functional>
 #include <imgui.h>
 #include <imgui_impl_sdl3.h>
-#include <includes/imgui_impl_sdlrenderer3.h>
 #include <SDL3/SDL_error.h>
 #include <SDL3/SDL_events.h>
 #include <SDL3/SDL_init.h>
@@ -76,12 +76,6 @@ public:
 	}
 
 	bool init() {
-		/*
-		Initialize the SDL3 renderer
-		Initialize list of objects and stuff
-		Initialize imgui
-		Return true if successful, false otherwise
-		*/
 		printlog("Initializing renderer");
 
 		if (initialized) {
@@ -114,8 +108,31 @@ public:
 		ImGui::CreateContext();
 		ImGuiIO& io = ImGui::GetIO();
 		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
-		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-		ImGui::StyleColorsDark();
+		ImGuiStyle& style = ImGui::GetStyle();
+		// Corner Rounding & Spacing
+		style.WindowRounding = 8.0f;
+		style.FrameRounding = 6.0f;
+		style.PopupRounding = 6.0f;
+		style.GrabRounding = 4.0f;
+		style.WindowBorderSize = 1.0f;
+		style.FrameBorderSize = 0.0f;
+		style.ItemSpacing = ImVec2(10, 10);
+		style.WindowPadding = ImVec2(14, 14);
+
+		// Dark Charcoal / Slate Palette
+		ImVec4* colors = style.Colors;
+		colors[ImGuiCol_WindowBg] = ImVec4(0.08f, 0.08f, 0.09f, 1.00f); // #141417
+		colors[ImGuiCol_ChildBg] = ImVec4(0.11f, 0.11f, 0.13f, 1.00f); // #1C1C21 (Cards/Panels)
+		colors[ImGuiCol_PopupBg] = ImVec4(0.11f, 0.11f, 0.13f, 1.00f);
+		colors[ImGuiCol_Border] = ImVec4(0.18f, 0.18f, 0.21f, 1.00f); // Subtle card borders
+		colors[ImGuiCol_FrameBg] = ImVec4(0.15f, 0.15f, 0.18f, 1.00f);
+		colors[ImGuiCol_FrameBgHovered] = ImVec4(0.20f, 0.20f, 0.24f, 1.00f);
+		colors[ImGuiCol_Button] = ImVec4(0.18f, 0.18f, 0.21f, 1.00f);
+		colors[ImGuiCol_ButtonHovered] = ImVec4(0.25f, 0.25f, 0.30f, 1.00f);
+		colors[ImGuiCol_Header] = ImVec4(0.15f, 0.15f, 0.18f, 1.00f);
+		colors[ImGuiCol_HeaderHovered] = ImVec4(0.20f, 0.20f, 0.24f, 1.00f);
+		colors[ImGuiCol_Text] = ImVec4(0.92f, 0.92f, 0.94f, 1.00f);
+		colors[ImGuiCol_TextDisabled] = ImVec4(0.50f, 0.50f, 0.55f, 1.00f);
 
 		if (!ImGui_ImplSDL3_InitForSDLRenderer(window, sdlRenderer) || !ImGui_ImplSDLRenderer3_Init(sdlRenderer)) {
 			printlog("ImGui initialization failed");
